@@ -3,6 +3,7 @@ import configparser
 import time
 from discord.ext import commands
 from plugins import rand_joke, cryptoPrice, saucenao, translater, image, dice, youtube as yt, helper
+import os
 
 description = '''A simple discord bot using discord.py'''
 bot = commands.Bot(command_prefix='/', description=description)
