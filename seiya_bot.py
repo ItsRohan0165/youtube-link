@@ -20,7 +20,7 @@ async def on_ready():
     print('------')
 
 @bot.command(name='yt', description='Returns the first video result from youtube')
-async def youtube(*args : str):
+async def youtube(*args : str, ctx):
     query = ' '.join(args)
     url = yt.getVideo(query, config['DEFAULT']['GOOGLE_KEY'])
 
@@ -73,7 +73,7 @@ async def status(ctx):
 
     embed = discord.Embed(title=' ', description=' ', color=0x7289da)
     embed.add_field(name='Online', value=message)
-    embed.add_field(name='Servers', value=str(len(bot.servers)))
+    embed.add_field(name='Servers', value=str(len(bot.guilds)))
 
     await ctx.send(embed=embed)
 
