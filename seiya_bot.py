@@ -28,7 +28,7 @@ async def youtube(*args : str, ctx):
         await bot.say('Unable to retrieve information ... ')
         return
 
-    await bot.say(url)
+    await ctx.send(url)
 
 
 @bot.command(name='translate', description='Translates english to japanese or vice versa')
