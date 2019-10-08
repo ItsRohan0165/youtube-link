@@ -8,6 +8,7 @@ import os
 description = '''A simple discord bot using discord.py'''
 client = discord.Client()
 bot = commands.Bot(command_prefix='/', description=description)
+GOOGLE_KEY = os.getenv('GOOGLE_KEY')
 
 
 start = time.time()
@@ -22,7 +23,7 @@ async def on_ready():
 @bot.command(name='yt', description='Returns the first video result from youtube')
 async def youtube(ctx, *args : str):
     query = ' '.join(args)
-    url = yt.getVideo(query, config['DEFAULT']['GOOGLE_KEY'])
+    url = yt.getVideo(query, 'GOOGLE_KEY')
 
     if url is None:
         await bot.say('Unable to retrieve information ... ')
