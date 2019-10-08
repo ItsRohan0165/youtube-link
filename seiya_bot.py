@@ -8,6 +8,8 @@ import os
 description = '''A simple discord bot using discord.py'''
 client = discord.Client()
 bot = commands.Bot(command_prefix='/', description=description)
+
+bot.remove_command('help')
 config = configparser.ConfigParser()
 config.read('config.ini')
 
