@@ -5,7 +5,7 @@ from discord.ext import commands
 from plugins import rand_joke, cryptoPrice, saucenao, translater, image, dice, youtube as yt, helper
 
 description = '''A simple discord bot using discord.py'''
-bot = commands.Bot(command_prefix='!', description=description)
+bot = commands.Bot(command_prefix='/', description=description)
 
 
 start = time.time()
@@ -17,7 +17,7 @@ async def on_ready():
     print(bot.user.id)
     print('------')
 
-@bot.command(name='youtube', description='Returns the first video result from youtube')
+@bot.command(name='yt', description='Returns the first video result from youtube')
 async def youtube(*args : str):
     query = ' '.join(args)
     url = yt.getVideo(query, config['DEFAULT']['GOOGLE_KEY'])
